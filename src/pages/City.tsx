@@ -1,7 +1,3 @@
-import React from "react";
-
-type Props = {};
-
-export default function City({}: Props) {
+export default function City() {
   return <div>City</div>;
 }
