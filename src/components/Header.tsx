@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ModeToggle } from "./mode-toggle";
+import CitySearch from "./city-search";
 
 const Header = () => {
   return (
@@ -8,8 +9,8 @@ const Header = () => {
         <Link to={"/"}>
           <img className="h-14" src="/public/weda-logo.png" alt="weda logo" />
         </Link>
-        <div>
-          {/* search */}
+        <div className="flex gap-4">
+          <CitySearch />
           <ModeToggle />
         </div>
       </div>
