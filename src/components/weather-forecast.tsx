@@ -59,24 +59,24 @@ const WeatherForecast = ({ data }: WeatherForecastProps) => {
 
   return (
     <Card>
-      <CardHeader className="px-4 pt-4 pb-2">
+      <CardHeader className="px-3 pt-4 pb-2 sm:px-4">
         <CardTitle className="text-base font-semibold">
           5-Day Forecast
         </CardTitle>
       </CardHeader>
-      <CardContent className="px-4 pb-4">
+      <CardContent className="px-3 pb-4 sm:px-4">
         <div className="space-y-2">
           {nextDays.map((day) => (
             <div
               key={day.date}
-              className="grid grid-cols-[1fr_auto_1fr_1fr] items-center gap-4 rounded-lg bg-muted/40 px-4 py-3 transition-colors hover:bg-muted/70"
+              className="grid grid-cols-1 gap-3 rounded-lg bg-muted/40 px-3 py-3 transition-colors hover:bg-muted/70 sm:grid-cols-[1fr_auto_1fr_1fr] sm:items-center sm:gap-4 sm:px-4"
             >
               {/* Day + description */}
               <div className="min-w-0">
-                <p className="font-medium text-sm leading-none">
+                <p className="text-sm font-medium leading-none">
                   {format(new Date(day.date * 1000), "EEE, MMM d")}
                 </p>
-                <p className="mt-1 text-xs text-muted-foreground capitalize truncate">
+                <p className="mt-1 truncate text-xs capitalize text-muted-foreground">
                   {day.weather.description}
                 </p>
               </div>
@@ -89,7 +89,7 @@ const WeatherForecast = ({ data }: WeatherForecastProps) => {
               />
 
               {/* Min / Max temp */}
-              <div className="flex items-center justify-center gap-2 text-sm font-medium">
+              <div className="flex items-center gap-2 text-sm font-medium sm:justify-center">
                 <span className="flex items-center gap-0.5 text-blue-400">
                   <ArrowDown className="h-3.5 w-3.5" />
                   {formatTemp(day.temp_min)}
@@ -101,7 +101,7 @@ const WeatherForecast = ({ data }: WeatherForecastProps) => {
               </div>
 
               {/* Humidity + Wind */}
-              <div className="flex items-center justify-end gap-3 text-xs text-muted-foreground">
+              <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground sm:justify-end">
                 <span className="flex items-center gap-1">
                   <Droplet className="h-3.5 w-3.5 text-blue-400" />
                   {day.humidity}%

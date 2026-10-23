@@ -28,21 +28,21 @@ const HourlyTemperature = ({ data }: HourlyTemperatureProps) => {
   }));
 
   return (
-    <Card className="flex-1">
-      <CardHeader className="px-4 pt-4 pb-2">
+    <Card className="flex-1 overflow-hidden">
+      <CardHeader className="px-3 pt-4 pb-2 sm:px-4">
         <CardTitle className="text-base font-semibold">
           Today's Temperature
         </CardTitle>
         {/* Legend */}
-        <div className="flex items-center gap-4 pt-1">
-          <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
+        <div className="flex flex-wrap items-center gap-2 pt-1 sm:gap-4">
+          <span className="flex items-center gap-1.5 text-[10px] text-muted-foreground sm:text-xs">
             <span
               className="inline-block h-0.5 w-4 rounded-full"
               style={{ backgroundColor: CHART_COLORS.temp }}
             />
             Temperature
           </span>
-          <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
+          <span className="flex items-center gap-1.5 text-[10px] text-muted-foreground sm:text-xs">
             <span
               className="inline-block h-0.5 w-4 rounded-full opacity-70"
               style={{
@@ -55,12 +55,12 @@ const HourlyTemperature = ({ data }: HourlyTemperatureProps) => {
         </div>
       </CardHeader>
 
-      <CardContent className="px-4 pt-0 pb-3">
-        <div className="h-35 w-full">
+      <CardContent className="px-3 pb-3 pt-0 sm:px-4">
+        <div className="h-40 w-full overflow-hidden sm:h-35">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart
               data={chartData}
-              margin={{ top: 4, right: 8, left: -16, bottom: 0 }}
+              margin={{ top: 4, right: 8, left: -12, bottom: 0 }}
             >
               <XAxis
                 dataKey="time"
