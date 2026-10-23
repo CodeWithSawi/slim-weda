@@ -61,11 +61,11 @@ export default function City() {
   if (!weatherQuery.data || !forecastQuery.data) return <WeatherSkeleton />;
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 overflow-x-hidden">
       {/* Page heading */}
-      <div className="flex items-center gap-2">
-        <h1 className="text-2xl font-bold tracking-tight">{cityName}</h1>
-        <span className="text-sm text-muted-foreground">
+      <div className="flex flex-col items-start gap-1 sm:flex-row sm:items-center sm:gap-2">
+        <h1 className="text-2xl font-bold tracking-tight break-words">{cityName}</h1>
+        <span className="text-sm text-muted-foreground break-all">
           {searchParams.get("lat")}°N, {searchParams.get("lon")}°E
         </span>
       </div>

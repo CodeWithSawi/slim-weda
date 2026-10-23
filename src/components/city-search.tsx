@@ -50,10 +50,10 @@ const CitySearch = () => {
       <Button
         variant="outline"
         onClick={() => setOpen(true)}
-        className="relative w-full justify-start text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64"
+        className="relative min-h-[44px] w-full min-w-0 shrink justify-start text-sm text-muted-foreground sm:min-w-[180px] sm:pr-12 md:w-40 lg:w-64"
       >
         <Search className="mr-2 h-4 w-4" />
-        Search cities...
+        <span className="truncate">Search cities...</span>
       </Button>
 
       <CommandDialog open={open} onOpenChange={handleOpenChange}>
@@ -86,7 +86,7 @@ const CitySearch = () => {
                       <Button
                         variant="ghost"
                         size="sm"
-                        className="h-auto px-1 py-0.5 text-xs text-muted-foreground hover:text-foreground"
+                        className="h-auto min-h-[44px] px-1 py-0.5 text-xs text-muted-foreground hover:text-foreground"
                         onClick={() => clearHistory.mutate()}
                       >
                         <XCircle className="mr-1 h-3 w-3" />

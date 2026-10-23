@@ -55,7 +55,7 @@ export default function WeatherDashboard() {
                   onClick={getLocation}
                   variant="outline"
                   size="sm"
-                  className="gap-2 border-destructive/30 hover:bg-destructive/10"
+                  className="min-h-[44px] gap-2 border-destructive/30 hover:bg-destructive/10"
                 >
                   <MapPin className="h-4 w-4" />
                   Enable Location
@@ -85,7 +85,7 @@ export default function WeatherDashboard() {
                 <Button
                   onClick={getLocation}
                   size="sm"
-                  className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90"
+                  className="min-h-[44px] gap-2 bg-primary text-primary-foreground hover:bg-primary/90"
                 >
                   <MapPin className="h-4 w-4" />
                   Enable Location
@@ -120,7 +120,7 @@ export default function WeatherDashboard() {
                   onClick={handleRefresh}
                   variant="outline"
                   size="sm"
-                  className="gap-2 border-destructive/30 hover:bg-destructive/10"
+                  className="min-h-[44px] gap-2 border-destructive/30 hover:bg-destructive/10"
                 >
                   <RefreshCw className="h-4 w-4" />
                   Retry
@@ -139,13 +139,14 @@ export default function WeatherDashboard() {
   }
 
   return (
-    <div className="space-y-4">
-      <div className="flex items-center justify-between">
-        <h1 className="text-xl font-bold tracking-tight">My Location:</h1>
+    <div className="space-y-4 overflow-x-hidden">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+        <h1 className="text-lg font-bold tracking-tight sm:text-xl">My Location:</h1>
         <Button
           variant="outline"
           size="icon"
           onClick={handleRefresh}
+          className="min-h-[44px] min-w-[44px]"
           disabled={weatherQuery.isFetching || forecastQuery.isFetching}
         >
           <RefreshCw
