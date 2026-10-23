@@ -46,9 +46,10 @@ const CurrentWeather = ({ data, locationName }: CurrentWeatherProps) => {
   return (
     <Card className="overflow-hidden border-border/50 shadow-md">
       <CardContent className="p-6">
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2">
+          {" "}
           {/* Left column: location + temp + stats */}
-          <div className="flex flex-col justify-between gap-6">
+          <div className="flex flex-col gap-4">
             {/* Location */}
             <div>
               <h2 className="text-2xl font-bold tracking-tight leading-none">
@@ -66,7 +67,7 @@ const CurrentWeather = ({ data, locationName }: CurrentWeatherProps) => {
 
             {/* Temperature */}
             <div className="flex items-end gap-4">
-              <p className="text-8xl font-extrabold tracking-tighter leading-none">
+              <p className="text-7xl font-extrabold tracking-tighter leading-none">
                 {formatTemp(temp)}
               </p>
               <div className="mb-1 space-y-1.5 text-sm font-medium">
@@ -109,10 +110,9 @@ const CurrentWeather = ({ data, locationName }: CurrentWeatherProps) => {
               ))}
             </div>
           </div>
-
           {/* Right column: weather icon + description */}
           <div className="flex flex-col items-center justify-center gap-3">
-            <div className="relative flex h-48 w-48 items-center justify-center drop-shadow-lg">
+            <div className="relative flex h-36 w-36 items-center justify-center drop-shadow-lg">
               <img
                 src={`https://openweathermap.org/img/wn/${currentWeather.icon}@4x.png`}
                 alt={currentWeather.description}
