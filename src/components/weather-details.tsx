@@ -23,6 +23,8 @@ const WeatherDetails = ({ data }: WeatherDetailsProps) => {
     return format(new Date(timestamp * 1000), "h:mm a");
   };
 
+  const windDegree = wind.deg ?? 0;
+
   const details = [
     {
       title: "Sunrise",
@@ -32,13 +34,13 @@ const WeatherDetails = ({ data }: WeatherDetailsProps) => {
     },
     {
       title: "Sunset",
-      value: formatTime(sys.sunrise),
+      value: formatTime(sys.sunset),
       icon: Sunset,
       color: "text-blue-500",
     },
     {
       title: "Wind Direction",
-      value: `${getWindDirection(wind.deg)} (${wind.deg})`,
+      value: `${getWindDirection(windDegree)} (${windDegree})`,
       icon: Compass,
       color: "text-green-500",
     },

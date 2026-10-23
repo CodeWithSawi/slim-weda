@@ -134,6 +134,10 @@ export default function WeatherDashboard() {
 
   const locationName = locationQuery.data?.[0];
 
+  if (!weatherQuery.data || !forecastQuery.data) {
+    return <WeatherSkeleton />;
+  }
+
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between">
